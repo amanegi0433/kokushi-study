@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#172554">
-<title>歯科国試 弱点克服ノート</title>
+<title>歯科国試 弱点克服ノート v2.1</title>
 <style>
 :root{--bg:#f4f6fb;--panel:#fff;--ink:#172033;--muted:#667085;--line:#e4e8f0;--blue:#3157c8;--blue2:#eaf0ff;--red:#c93645;--redbg:#fff0f1;--amber:#a86b00;--amberbg:#fff6df;--green:#18794e;--greenbg:#eaf8f0;--shadow:0 8px 28px #1725540d}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:15px}header{background:#172554;color:#fff;padding:18px max(16px,calc((100% - 1100px)/2));padding-top:calc(18px + env(safe-area-inset-top));}header h1{font-size:20px;margin:0 0 5px}header p{margin:0;color:#dbe5ff;font-size:12px}.wrap{max-width:1100px;margin:auto;padding:16px 14px 40px}.tabs{display:flex;gap:7px;overflow:auto;padding:3px 0 14px}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;white-space:nowrap;font-weight:650;color:#445;cursor:pointer}.tab.active{background:var(--blue);border-color:var(--blue);color:white}.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:var(--shadow)}h2{font-size:18px;margin:0 0 13px}h3{font-size:15px;margin:0 0 9px}.muted{color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.stat{padding:13px;border:1px solid var(--line);border-radius:13px;background:#fff}.stat small{display:block;color:var(--muted);font-size:11px}.stat strong{font-size:24px;display:block;margin-top:4px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}label{font-size:12px;color:#4b5565;font-weight:650}input,select,textarea{font:inherit;border:1px solid #d5dbe6;border-radius:10px;padding:10px 11px;background:#fff;color:var(--ink);width:100%;min-width:0}textarea{min-height:75px;resize:vertical}input[type=file]{padding:8px}button{font:inherit;border:0;border-radius:10px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer}button.secondary{background:#eef1f7;color:#29354b}button.danger{background:var(--redbg);color:var(--red)}button.small{padding:7px 10px;font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.pill{display:inline-block;padding:4px 8px;border-radius:99px;font-size:11px;font-weight:700}.wrong{background:var(--redbg);color:var(--red)}.vague{background:var(--amberbg);color:var(--amber)}.good{background:var(--greenbg);color:var(--green)}.neutral{background:#edf0f5;color:#566174}.item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.thumb{width:76px;height:76px;object-fit:cover;border-radius:9px;background:#eef1f6;flex:none}.itemmain{min-width:0;flex:1}.itemtitle{font-weight:750;margin-bottom:5px}.itemmeta{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.itemactions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.empty{padding:25px;text-align:center;color:var(--muted);font-size:13px}.hidden{display:none!important}.preview{max-width:100%;max-height:58vh;object-fit:contain;display:block;margin:10px auto;border-radius:10px;background:#f1f3f7}.quizhead{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}.bar{height:8px;background:#edf0f5;border-radius:9px;overflow:hidden}.bar>i{display:block;height:100%;background:var(--blue)}.notice{background:#f0f5ff;border:1px solid #dce6ff;color:#344b86;padding:11px;border-radius:11px;font-size:12px;line-height:1.6}.modalback{position:fixed;inset:0;background:#11182788;display:flex;align-items:flex-end;justify-content:center;padding:10px;z-index:5}.modal{background:#fff;border-radius:18px 18px 12px 12px;padding:16px;width:min(760px,100%);max-height:92vh;overflow:auto}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.close{background:#eef1f7;color:#334}.footer{font-size:11px;color:var(--muted);text-align:center;padding:12px}
@@ -14,14 +14,14 @@
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 </head>
 <body>
-<header><h1>歯科国試・弱点克服ノート</h1><p>過去問を自分で登録して、間違い・曖昧・理解済みを記録する個人用学習ツール</p></header>
+<header><h1>歯科国試・弱点克服ノート</h1><p>原文テキストを取り込み、間違い・曖昧・理解済みを記録する個人用学習ツール v2.1</p></header>
 <div class="wrap">
 <nav class="tabs">
-<button class="tab active" data-tab="home">ホーム</button><button class="tab" data-tab="add">問題登録</button><button class="tab" data-tab="pdfimport">PDF一括登録</button><button class="tab" data-tab="answerkeys">正答表管理</button><button class="tab" data-tab="review">今日の復習</button><button class="tab" data-tab="list">問題一覧</button><button class="tab" data-tab="analysis">弱点分析</button><button class="tab" data-tab="backup">バックアップ</button>
+<button class="tab active" data-tab="home">ホーム</button><button class="tab" data-tab="add">問題登録</button><button class="tab" data-tab="webimport">原文データ取込</button><button class="tab" data-tab="pdfimport">PDF一括登録</button><button class="tab" data-tab="answerkeys">正答表管理</button><button class="tab" data-tab="review">今日の復習</button><button class="tab" data-tab="list">問題一覧</button><button class="tab" data-tab="analysis">弱点分析</button><button class="tab" data-tab="backup">バックアップ</button>
 </nav>
 <section id="home" class="view">
 <div class="grid" id="stats"></div>
-<div class="panel"><h2>今日の学習</h2><div id="todaySummary"></div><div class="actions"><button onclick="showTab('review')">今日の復習を始める</button><button class="secondary" onclick="showTab('add')">問題を登録する</button></div></div>
+<div class="panel"><h2>演習メニュー</h2><p class="muted">問題を個別登録しなくても、公開過去問データベースから取得して演習できます。取得した問題文は保存せず、解答履歴だけを端末に記録します。</p><div class="formgrid"><div class="field"><label for="practiceExam">対象試験回</label><select id="practiceExam"><option value="all">第115〜119回すべて</option><option value="119">第119回</option><option value="118">第118回</option><option value="117">第117回</option><option value="116">第116回</option><option value="115">第115回</option></select></div><div class="field"><label for="practiceSection">問題区分</label><select id="practiceSection"><option value="all">A〜Dすべて</option><option>A</option><option>B</option><option>C</option><option>D</option></select></div></div><div class="actions"><button id="practiceAllBtn">全問題からランダム出題</button><button class="secondary" id="practiceWrongBtn">間違えた問題からランダム</button><button class="secondary" id="practiceDueBtn">復習期限の問題を出題</button></div><p id="practiceStatus" class="muted" aria-live="polite">演習ボタンを押すと対象問題を取得します。初回は通信に時間がかかる場合があります。</p><div id="practiceArea"></div></div><div class="panel"><h2>今日の学習</h2><div id="todaySummary"></div><div class="actions"><button onclick="showTab('review')">登録済み問題の復習</button><button class="secondary" onclick="showTab('add')">問題を登録する</button></div></div>
 <div class="panel"><h2>優先して復習したい問題</h2><div id="priorityList"></div></div>
 </section>
 <section id="add" class="view hidden">
@@ -43,6 +43,20 @@
 <div class="actions"><button type="submit">保存する</button><button type="button" class="secondary" id="resetForm">入力をクリア</button></div>
 <div id="duplicateMsg" class="muted" style="margin-top:8px"></div>
 </form></div></section>
+<section id="webimport" class="view hidden">
+<div class="panel"><h2>外部の原文データから登録（第115〜119回）</h2>
+<div class="notice"><b>OCR・AIによる文章生成は使いません。</b>公開データベースに掲載された問題文・選択肢を、そのままテキストとして取り込みます。取得した文章をAIで補完・言い換えすることはありません。問題文が見つからない場合は登録しません。</div>
+<div class="formgrid" style="margin-top:12px">
+<div class="field"><label for="webExamNo">国家試験の回数</label><select id="webExamNo"><option>119</option><option>118</option><option>117</option><option>116</option><option>115</option></select></div>
+<div class="field"><label for="webSection">問題区分</label><select id="webSection"><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+</div>
+<div class="actions"><button id="openWebSourceBtn">原文データベースを開く</button><button class="secondary" id="tryFetchWebBtn">自動取得を試す</button></div>
+<p id="webImportStatus" class="muted" aria-live="polite">まず外部ページを開き、対象区分のページ内容をコピーして下欄に貼り付けてください。自動取得はサイト側の通信制限（CORS）により使えない場合があります。</p>
+<div class="field"><label for="webRawText">外部ページからコピーしたテキスト</label><textarea id="webRawText" style="min-height:220px" placeholder="対象回・区分のページ本文をコピーして貼り付け"></textarea></div>
+<div class="actions"><button id="parseWebTextBtn">原文を解析して確認</button><button class="secondary" id="clearWebTextBtn">クリア</button></div>
+</div>
+<div class="panel hidden" id="webPreviewPanel"><div class="quizhead"><h2>登録前の原文確認</h2><span id="webDraftCount" class="muted"></span></div><p class="muted">各問の問題文と選択肢を原文のまま表示します。選択肢が5肢そろっていない問題は自動登録対象から除外します。内容を修正・補完せず、取得元の表示と異なる場合は登録しないでください。</p><div id="webDraftList"></div><div class="actions"><button id="registerWebBtn">確認済みの問題を登録</button><button class="secondary" id="cancelWebBtn">取り消す</button></div><p id="webRegisterStatus" class="muted"></p></div>
+</section>
 <section id="pdfimport" class="view hidden">
 <div class="panel"><h2>PDFから一括登録</h2>
 <div class="notice">厚生労働省のPDFで文字コードの対応表が不完全な場合に備え、ページを画像化して日本語OCRで読み取ります。OCR結果は誤認識の可能性があるため、必ず登録前に確認・修正してください。PDF本体はこの端末内で処理します。OCRエンジンと言語データの初回取得時のみ外部CDNへ接続します。</div>
@@ -83,7 +97,10 @@
 <div id="modal" class="modalback hidden"><div class="modal"><div class="modalhead"><h2 id="modalTitle">問題</h2><button class="close" onclick="closeModal()">閉じる</button></div><div id="modalBody"></div></div></div>
 <script>
 const DB_NAME='shikakukokuishiWeaknessDB', DB_VERSION=2, STORE='questions', KEY_STORE='answerKeys';
-let db, questions=[], answerKeys=[], currentQueue=[], currentIndex=0, activeImage=null;
+let db, questions=[], answerKeys=[], currentQueue=[], currentIndex=0, activeImage=null, practiceQueue=[], practiceIndex=0, remotePool=[];
+const PRACTICE_HISTORY_KEY='kokushiPracticeHistoryV21';
+function getPracticeHistory(){try{return JSON.parse(localStorage.getItem(PRACTICE_HISTORY_KEY)||'{}')}catch{return {}}}
+function setPracticeHistory(h){localStorage.setItem(PRACTICE_HISTORY_KEY,JSON.stringify(h))}
 const $=id=>document.getElementById(id);
 const today=()=>new Date().toISOString().slice(0,10);
 function openDB(){return new Promise((resolve,reject)=>{const req=indexedDB.open(DB_NAME,DB_VERSION);req.onupgradeneeded=()=>{const d=req.result;if(!d.objectStoreNames.contains(STORE)){const s=d.createObjectStore(STORE,{keyPath:'id'});s.createIndex('examKey','examKey',{unique:false});}if(!d.objectStoreNames.contains(KEY_STORE)){d.createObjectStore(KEY_STORE,{keyPath:'id'});}};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});}
@@ -110,6 +127,75 @@ function tag(s){let map={wrong:['不正解','wrong'],vague:['曖昧','vague'],go
 function showTab(t){document.querySelectorAll('.view').forEach(x=>x.classList.add('hidden'));$(t).classList.remove('hidden');document.querySelectorAll('.tab[data-tab]').forEach(x=>x.classList.toggle('active',x.dataset.tab===t));if(t==='home')renderHome();if(t==='review')startReview();if(t==='list')renderList();if(t==='analysis')renderAnalysis();if(t==='answerkeys')renderSavedKeys();if(t==='backup')$('backupStatus').textContent=`保存中の問題：${questions.length}問`;}
 document.querySelectorAll('.tab[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
 async function refresh(){questions=await all();answerKeys=await allKeys();renderHome();renderList();populateFilters();}
+function shuffle(a){let x=a.slice();for(let i=x.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x}
+function practiceKey(q){return `${q.examNo}-${q.section}-${q.number}`}
+function parseRemotePage(html,examNo,section){
+  const doc=new DOMParser().parseFromString(html,'text/html');
+  let raw=doc.body.innerHTML.replace(/<br\s*\/?\s*>/gi,'\n').replace(/<\/(?:p|div|h[1-6]|li|article|section|tr|td|header|footer|a|button|summary)>/gi,'\n');
+  let txt=raw.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&#39;/g,"'").replace(/&quot;/g,'"');
+  const lines=txt.split(/\r?\n/).map(x=>x.replace(/\s+/g,' ').trim()).filter(Boolean);
+  let starts=[];const re=new RegExp(`(?:第?${examNo})?\\s*${examNo}${section}(\\d{1,3})\\b`,'g');
+  lines.forEach((line,i)=>{let m;while((m=re.exec(line))!==null)starts.push({i,n:Number(m[1])})});
+  starts=[...new Map(starts.map(x=>[x.n,x])).values()].sort((a,b)=>a.i-b.i);
+  let out=[];
+  for(let z=0;z<starts.length;z++){
+    let st=starts[z], chunk=lines.slice(st.i+1,starts[z+1]?.i??lines.length);
+    // Strip repeated question heading markers and footer/source noise.
+    let answerLine=chunk.find(x=>/^正答\s*(?:を見る)?\s*$/.test(x));
+    let ansIdx=chunk.findIndex(x=>/^正答\s*(?:を見る)?\s*$/.test(x));
+    let answer=ansIdx>=0?(chunk.slice(ansIdx+1).find(x=>/^正答\s*[：:]?/.test(x))||'').replace(/^正答\s*[：:]?\s*/,'').trim().toLowerCase():'';
+    let body=ansIdx>=0?chunk.slice(0,ansIdx):chunk;
+    let choiceStart=body.findIndex(x=>/^(?:1\s*[.．、)]?\s*)?a\s*[.．、)]/.test(x));
+    let stem=(choiceStart>=0?body.slice(0,choiceStart):body).join('\n').trim();
+    stem=stem.replace(/^#+\s*/,'').replace(/^(?:問題)?\s*[:：]?\s*/, '').trim();
+    let choices=[];
+    for(let line of (choiceStart>=0?body.slice(choiceStart):[])){
+      let m=line.match(/^(?:[1-5]\s*[.．、)]?\s*)?([a-e])\s*[.．、)]?\s*(.+)$/i);
+      if(m)choices.push({letter:m[1].toLowerCase(),text:m[2].trim()});
+    }
+    choices=choices.filter((x,i,a)=>a.findIndex(y=>y.letter===x.letter)===i).sort((a,b)=>a.letter.localeCompare(b.letter));
+    if(stem&&choices.length===5){out.push({id:`remote-${examNo}${section}${st.n}`,examNo:Number(examNo),section,number:st.n,questionText:stem+'\n'+choices.map(c=>`${c.letter}. ${c.text}`).join('\n'),answer,choices,sourceUrl:`https://kakomon.aident-studios.com/${examNo}/`,history:[]})}
+  }
+  return out;
+}
+async function loadRemotePool(){
+  if(remotePool.length)return remotePool;
+  const exam=$('practiceExam').value,sec=$('practiceSection').value;
+  let exams=exam==='all'?[115,116,117,118,119]:[Number(exam)],sections=sec==='all'?['A','B','C','D']:[sec],allq=[];
+  $('practiceStatus').textContent='公開過去問データベースから問題を取得しています…';
+  for(const e of exams){for(const s of sections){
+    $('practiceStatus').textContent=`第${e}回 ${s}問題を取得中…`;
+    const url=`https://kakomon.aident-studios.com/${e}/`;
+    const response=await fetch(url,{mode:'cors'});if(!response.ok)throw new Error(`第${e}回のページ取得に失敗しました（${response.status}）`);
+    const html=await response.text();const parsed=parseRemotePage(html,e,s);allq.push(...parsed);
+  }}
+  remotePool=allq;
+  if(!remotePool.length)throw new Error('問題データを解析できませんでした。外部サイトのページ構造が変更された可能性があります。');
+  $('practiceStatus').textContent=`${remotePool.length}問を取得しました。問題文は登録せず、演習中のみ表示します。`;
+  return remotePool;
+}
+async function startPractice(mode){
+  $('practiceArea').innerHTML='';$('practiceStatus').textContent='問題を準備しています…';
+  try{
+    let pool=await loadRemotePool(),hist=getPracticeHistory(),arr=pool;
+    if(mode==='wrong')arr=pool.filter(q=>hist[practiceKey(q)]?.last==='wrong');
+    if(mode==='due')arr=pool.filter(q=>{let h=hist[practiceKey(q)];if(!h)return false;let days=h.last==='wrong'?1:h.last==='vague'?3:7;return !h.date||((Date.now()-new Date(h.date+'T00:00:00').getTime())/86400000)>=days});
+    if(mode==='wrong'||mode==='due')arr=shuffle(arr);
+    else arr=shuffle(arr);
+    if(!arr.length){$('practiceStatus').textContent=mode==='wrong'?'間違えた履歴のある問題はまだありません。まず全問題演習を行ってください。':'復習期限に達した問題はありません。';return}
+    practiceQueue=arr;practiceIndex=0;$('practiceStatus').textContent=`${arr.length}問を出題対象にしました。`;renderPractice();
+  }catch(err){$('practiceStatus').innerHTML=`取得できませんでした：${esc(err.message)}<br>このブラウザから外部サイトへの直接接続が制限されている可能性があります。原文データ取込タブでページ本文をコピーして登録する方法を利用してください。`}
+}
+function renderPractice(){
+  if(practiceIndex>=practiceQueue.length){$('practiceArea').innerHTML='<div class="notice">この出題セットは終了です。お疲れさまでした。</div>';return}
+  const q=practiceQueue[practiceIndex],multi=/([2-5])つ選べ/.test(q.questionText),choices=q.choices;
+  $('practiceArea').innerHTML=`<div class="panel" style="margin-top:12px;box-shadow:none"><div class="quizhead"><b>第${q.examNo}回 ${q.section}${q.number}</b><span class="muted">${practiceIndex+1} / ${practiceQueue.length}</span></div><p style="white-space:pre-wrap;line-height:1.8">${esc(q.questionText.split('\n').slice(0,-5).join('\n'))}</p><div>${choices.map(c=>`<label style="display:flex;gap:9px;padding:10px 2px;border-bottom:1px solid var(--line)"><input type="${multi?'checkbox':'radio'}" name="remoteChoice" value="${c.letter}" style="width:auto"><span><b>${c.letter}.</b> ${esc(c.text)}</span></label>`).join('')}</div><div class="actions"><button onclick="checkPracticeAnswer()">回答する</button><button class="secondary" onclick="practiceIndex++;renderPractice()">スキップ</button></div><div id="practiceFeedback"></div><p class="muted">出典：<a href="${q.sourceUrl}" target="_blank" rel="noopener">AIDent Studio 過去問データベース</a></p></div>`;
+}
+function checkPracticeAnswer(){const q=practiceQueue[practiceIndex],chosen=[...document.querySelectorAll('input[name="remoteChoice"]:checked')].map(x=>x.value).sort().join(''),ans=(q.answer.match(/[a-e]/g)||[]).sort().join('');if(!chosen){$('practiceFeedback').textContent='選択肢を選んでください。';return}if(!ans){$('practiceFeedback').textContent='この問題の正答を取得できないため、採点できません。';return}let ok=chosen===ans,h=getPracticeHistory(),k=practiceKey(q);h[k]={last:ok?'good':'wrong',date:new Date().toISOString().slice(0,10),answer:ans};setPracticeHistory(h);$('practiceFeedback').innerHTML=`<p class="pill ${ok?'good':'wrong'}">${ok?'正解':'不正解'}</p><p>あなたの回答：${esc(chosen.toUpperCase())} ／ 正答：${esc(ans.toUpperCase())}</p><p class="muted">出典掲載の正答と照合しました。</p><div class="actions"><button onclick="practiceIndex++;renderPractice()">次の問題へ</button></div>`}
+$('practiceAllBtn').addEventListener('click',()=>startPractice('all'));
+$('practiceWrongBtn').addEventListener('click',()=>startPractice('wrong'));
+$('practiceDueBtn').addEventListener('click',()=>startPractice('due'));
+$('practiceExam').addEventListener('change',()=>{remotePool=[]});$('practiceSection').addEventListener('change',()=>{remotePool=[]});
 function renderHome(){let total=questions.length,done=questions.filter(q=>q.history?.length),wrong=questions.filter(q=>status(q)==='wrong').length,vague=questions.filter(q=>status(q)==='vague').length,good=questions.filter(q=>status(q)==='good').length,due=questions.filter(q=>!last(q)||dueDate(q)<=today()).length;let n=[['登録問題',total],['解答済み',done.length],['不正解（直近）',wrong],['曖昧（直近）',vague],['理解済み（直近）',good],['今日の復習候補',due]];$('stats').innerHTML=n.map(x=>`<div class="stat"><small>${x[0]}</small><strong>${x[1]}</strong></div>`).join('');$('todaySummary').innerHTML=`<p>登録 <b>${total}</b> 問のうち、今日の復習候補は <b>${due}</b> 問です。</p><p class="muted">不正解・曖昧の問題を優先して並べます。正答率は解答履歴から集計します。</p>`;let p=questions.filter(q=>status(q)!=='good').sort(sortPriority).slice(0,5);$('priorityList').innerHTML=p.length?p.map(itemHTML).join(''):'<div class="empty">まだ問題が登録されていません。</div>'}
 function questionImages(q){let a=(q.images||[]).filter(Boolean);if(!a.length&&q.image)a=[q.image];return a.map(x=>`<img class="preview" src="${x}">`).join('')}
 function itemHTML(q){let c=counts(q);return `<div class="item">${(q.images&&q.images.length)?`<img class="thumb" src="${q.images[0]}">`:q.image?`<img class="thumb" src="${q.image}">`:`<div class="thumb" style="display:grid;place-items:center;color:#98a2b3">画像なし</div>`}<div class="itemmain"><div class="itemtitle">${esc(label(q))} ${tag(status(q))}</div><div class="itemmeta"><span class="muted">${esc(q.subject||'科目未設定')} ${q.field?'・'+esc(q.field):''}</span><span class="muted">誤 ${c.wrong} / 曖昧 ${c.vague} / ${c.total}回</span></div><div class="itemactions"><button class="small" onclick="openQuestion('${q.id}')">開く</button><button class="small secondary" onclick="editQuestion('${q.id}')">編集</button></div></div></div>`}
@@ -186,6 +272,33 @@ $('exportKeyRowsBtn').onclick=()=>{let text=$('keyRowsText').value,blob=new Blob
 function renderSavedKeys(){let groups={};answerKeys.forEach(k=>{groups[k.examNo]=groups[k.examNo]||[];groups[k.examNo].push(k)});$('savedKeyList').innerHTML=Object.keys(groups).sort((a,b)=>b-a).map(ex=>`<div style="padding:10px 0;border-bottom:1px solid var(--line)"><b>第${esc(ex)}回</b> <span class="muted">${groups[ex].length}件（${['A','B','C','D'].map(sec=>`${sec}:${groups[ex].filter(k=>k.section===sec).length}`).join(' / ')}）</span><div class="actions"><button class="small secondary" onclick="exportSavedKeys(${Number(ex)})">書き出す</button><button class="small danger" onclick="deleteSavedKeys(${Number(ex)})">削除</button></div></div>`).join('')||'<div class="empty">正答表はまだ登録されていません。</div>'}
 function exportSavedKeys(ex){let rows=answerKeys.filter(k=>k.examNo===ex).sort((a,b)=>a.section.localeCompare(b.section)||a.number-b.number);let csv=rows.map(k=>`${k.section},${k.number},${k.status==='excluded'?'除外':(k.answers||[k.answer]).join('|')}`).join('\n'),blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`kokushi-${ex}-answer-keys.csv`;a.click();URL.revokeObjectURL(url)}
 async function deleteSavedKeys(ex){if(!confirm(`第${ex}回の正答データをすべて削除しますか？登録済み問題に直接入力済みの正答は消えません。`))return;for(let k of answerKeys.filter(x=>x.examNo===ex))await delKey(k.id);await refresh();renderSavedKeys()}
+
+// 外部原文データ取り込み：原文テキストのみを解析し、AI補完・OCR補正は行わない
+let webDrafts=[];
+function webSourceUrl(){return `https://kakomon.aident-studios.com/${Number($('webExamNo').value)}/`;}
+$('openWebSourceBtn').onclick=()=>window.open(webSourceUrl(),'_blank','noopener');
+$('tryFetchWebBtn').onclick=async()=>{let url=webSourceUrl();$('webImportStatus').textContent='外部ページへ接続しています…';try{let r=await fetch(url,{mode:'cors'});if(!r.ok)throw new Error('HTTP '+r.status);let html=await r.text();let doc=new DOMParser().parseFromString(html,'text/html');$('webRawText').value=doc.body.innerText||doc.body.textContent||'';$('webImportStatus').textContent='ページを取得しました。区分を選び、原文を解析してください。';}catch(e){$('webImportStatus').textContent='ブラウザからの自動取得はサイト側の通信制限（CORS等）で利用できませんでした。外部ページを開き、対象区分の問題テキストをコピーして貼り付けてください。原文を変更・生成する処理は行いません。';window.open(url,'_blank','noopener');}};
+function parseWebCopiedText(raw,examNo,section){
+ const lines=String(raw||'').replace(/\r/g,'\n').split('\n').map(x=>x.replace(/[\t　]+/g,' ').trim()).filter(Boolean);
+ const starts=[];const re=new RegExp(`(?:第\\s*)?${examNo}\\s*${section}\\s*(\\d{1,3})(?!\\d)`,'i');
+ for(let i=0;i<lines.length;i++){let m=lines[i].match(re);if(m)starts.push({idx:i,num:Number(m[1])});}
+ // page may label questions without repeating exam number: support headings like 115A1 / A1 only after first match
+ if(!starts.length){for(let i=0;i<lines.length;i++){let m=lines[i].match(new RegExp(`^${section}\\s*0?(\\d{1,3})$`,'i'));if(m)starts.push({idx:i,num:Number(m[1])});}}
+ let out=[];for(let k=0;k<starts.length;k++){let st=starts[k],end=k+1<starts.length?starts[k+1].idx:lines.length,block=lines.slice(st.idx+1,end);let clean=block.filter(x=>!/^正答を見る$/.test(x)&&!/^正答\s/.test(x)&&!/^Image:/i.test(x)&&!/^\d+問が見つかりました/.test(x));
+  // options often appear as "1. a選択肢" or "a. 選択肢". Capture original wording only.
+  let opts=[];let firstOpt=-1;for(let j=0;j<clean.length;j++){let m=clean[j].match(/^(?:[1-5][.)．、]?\s*)?([a-e])\s*[.)．、]?\s*(.+)$/i);if(m){let txt=m[2].trim();if(txt){if(firstOpt<0)firstOpt=j;opts.push({letter:m[1].toLowerCase(),text:txt});}}}
+  if(firstOpt<0)continue;let prompt=clean.slice(0,firstOpt).join('\n').replace(/^#+\s*/gm,'').trim();
+  // only accept complete, ordered a-e options; this prevents partial or misparsed text from being silently registered
+  let letters=opts.map(x=>x.letter).join('');if(letters!=='abcde')continue;
+  let questionText=prompt+'\n\n'+opts.map(x=>`${x.letter}. ${x.text}`).join('\n');
+  if(prompt.length<4)continue;
+  out.push({number:st.num,questionText,opts,sourceUrl:`${webSourceUrl()}#${examNo}${section}${st.num}`,verifiedShape:true});
+ }
+ const seen=new Map();out.forEach(x=>{if(!seen.has(x.number))seen.set(x.number,x)});return [...seen.values()].sort((a,b)=>a.number-b.number);
+}
+$('parseWebTextBtn').onclick=()=>{let ex=Number($('webExamNo').value),sec=$('webSection').value;webDrafts=parseWebCopiedText($('webRawText').value,ex,sec);$('webImportStatus').textContent=webDrafts.length?`${webDrafts.length}問を抽出しました。5肢すべてを確認できた問題のみ候補にしています。`:'問題を抽出できませんでした。ページ本文全体ではなく対象区分の問題一覧をコピーできているか確認してください。';$('webDraftCount').textContent=`${webDrafts.length}問`;$('webDraftList').innerHTML=webDrafts.map((d,i)=>`<details open style="border-top:1px solid var(--line);padding:10px 0"><summary><b>${ex}${sec}${d.number}</b> <span class="pill good">5肢検出</span></summary><p style="white-space:pre-wrap">${esc(d.questionText)}</p><p><a href="${d.sourceUrl}" target="_blank" rel="noopener">出典ページを開く</a></p><label><input type="checkbox" data-web-ok="${i}" style="width:auto"> 原文ページと照合し、この内容が一致していることを確認した</label></details>`).join('');$('webPreviewPanel').classList.toggle('hidden',!webDrafts.length);};
+$('registerWebBtn').onclick=async()=>{let ex=Number($('webExamNo').value),sec=$('webSection').value,year=ex===115?2022:ex===116?2023:ex===117?2024:ex===118?2025:2026;let approved=[...$('webDraftList').querySelectorAll('[data-web-ok]:checked')].map(x=>Number(x.dataset.webOk));if(!approved.length){alert('原文と照合してチェックした問題がありません。');return;}let added=0,skipped=0;for(let i of approved){let d=webDrafts[i],exists=questions.find(q=>q.examNo===ex&&q.section===sec&&q.number===d.number);if(exists){skipped++;continue;}let q={id:crypto.randomUUID(),examNo:ex,examYear:year,section:sec,number:d.number,examKey:`${ex}-${sec}`,subject:'',field:'',questionText:d.questionText,answer:officialAnswer(ex,sec,d.number),explanation:'',image:'',images:[],history:[],streak:0,createdAt:new Date().toISOString(),source:'external-original-text',sourceUrl:d.sourceUrl,sourceVerified:true};await put(q);added++;}await refresh();$('webRegisterStatus').textContent=`登録 ${added}問／重複スキップ ${skipped}問。`;alert(`原文データを登録しました。\n登録：${added}問\n重複スキップ：${skipped}問`);};
+$('cancelWebBtn').onclick=()=>{$('webPreviewPanel').classList.add('hidden');webDrafts=[];};$('clearWebTextBtn').onclick=()=>{$('webRawText').value='';$('webPreviewPanel').classList.add('hidden');webDrafts=[];$('webImportStatus').textContent='入力をクリアしました。'};
 
 $('exportBtn').onclick=async()=>{let data={app:'歯科国試・弱点克服ノート',version:2,exportedAt:new Date().toISOString(),questions,answerKeys};let blob=new Blob([JSON.stringify(data)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`shikakokuishi-backup-${today()}.json`;a.click();URL.revokeObjectURL(url);$('backupStatus').textContent='バックアップファイルを作成しました。'}
 $('importFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let data=JSON.parse(await f.text());if(!Array.isArray(data.questions))throw Error('形式が違います');if(!confirm(`${data.questions.length}問を読み込みます。既存データと同じIDの問題は上書きされます。続けますか？`))return;for(let q of data.questions){if(!q.id)q.id=crypto.randomUUID();await put(q)}if(Array.isArray(data.answerKeys)){for(let k of data.answerKeys){if(!k.id)k.id=`${k.examNo}-${k.section}-${k.number}`;await putKey(k)}}await refresh();$('backupStatus').textContent='読み込みました。';alert('バックアップを読み込みました。')}catch(err){alert('読み込みに失敗しました：'+err.message)}e.target.value=''};
